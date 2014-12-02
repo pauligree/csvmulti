@@ -4,6 +4,10 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
   alert('The File APIs are not fully supported in this browser.');
 }
 
+function m( obj ){
+	if (typeof console != "undefined") console.log(obj);
+}
+
 var Casi = new Array();
 var CasiExt = new Array();
 
@@ -19,10 +23,12 @@ Papa.parse("../test.csv", {
     dynamicTyping: true,
     complete: function(results) {
     	Casi = results.data;
-    	len = Casi.length;
-		console.log(len);
-		for( var xxx in Casi ){
- 			console.log( Casi[xxx]["casi"] +);
+		for( var x in Casi ){
+ 			for (y=0; y<Casi[x]["casi"]; y++){
+ 				CasiExt[y] = Casi[x];
+ 				//CasiExt[y]["casi"] = 1;//Casi[x]["casi"];
+        document.write(CasiExt[y]["id"]+","+CasiExt[y]["casi"]+","+CasiExt[y]["dove"]+"<br>");
+ 			}
 		}
     }
 });

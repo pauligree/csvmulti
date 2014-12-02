@@ -18,26 +18,11 @@ Papa.parse("../test.csv", {
     header: true,
     dynamicTyping: true,
     complete: function(results) {
-    	CasiExt = results.data;
+    	Casi = results.data;
+    	len = Casi.length;
+		console.log(len);
+		for( var xxx in Casi ){
+ 			console.log( Casi[xxx]["casi"] +);
+		}
     }
 });
-
-len = CasiExt.length;
-console.log(len);
-/*for (i=0;i<len;i++){
-	for (i = CasiExt[0].casi-1; i==0; i--){
-        	document.write(CasiExt[0].casi);
-    }
-}*/
-for( var xxx in CasiExt ){
- document.write( CasiExt[xxx]["casi"] );
-}
-
-for (var key in CasiExt) {
-  if (p.hasOwnProperty(key)) {
-    alert(key + " -> " + CasiExt[key]);
-  }
-}
-
-
-document.write( CasiExt[0]["casi"] );

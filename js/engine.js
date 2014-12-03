@@ -23,10 +23,12 @@ Papa.parse("../test.csv", {
     dynamicTyping: true,
     complete: function(results) {
     	Casi = results.data;
+      CasiExt = Casi.slice();
+      console.log(CasiExt[0]);
 		for( var x in Casi ){
  			for (y=0; y<Casi[x]["casi"]; y++){
- 				CasiExt[y] = Casi[x];
- 				//CasiExt[y]["casi"] = 1;//Casi[x]["casi"];
+ 				
+ 				CasiExt[y]['casi'] = 1;//Casi[x]["casi"];
         document.write(CasiExt[y]["id"]+","+CasiExt[y]["casi"]+","+CasiExt[y]["dove"]+"<br>");
  			}
 		}
